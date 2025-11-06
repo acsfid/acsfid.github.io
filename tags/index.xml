@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My New Hugo Site</title>
+    <link>https://example.org/tags/</link>
+    <description>Recent content in Tags on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Jun 2023 22:34:12 +0700</lastBuildDate>
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codeforces</title>
+      <link>https://example.org/tags/codeforces/</link>
+      <pubDate>Sat, 24 Jun 2023 22:34:12 +0700</pubDate>
+      <guid>https://example.org/tags/codeforces/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cp</title>
+      <link>https://example.org/tags/cp/</link>
+      <pubDate>Sat, 24 Jun 2023 22:34:12 +0700</pubDate>
+      <guid>https://example.org/tags/cp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Problemsetter</title>
+      <link>https://example.org/tags/problemsetter/</link>
+      <pubDate>Sat, 24 Jun 2023 22:34:12 +0700</pubDate>
+      <guid>https://example.org/tags/problemsetter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>https://example.org/tags/tutorial/</link>
+      <pubDate>Sat, 24 Jun 2023 22:34:12 +0700</pubDate>
+      <guid>https://example.org/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Life</title>
+      <link>https://example.org/tags/life/</link>
+      <pubDate>Tue, 28 Mar 2023 23:00:00 +0700</pubDate>
+      <guid>https://example.org/tags/life/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pressure</title>
+      <link>https://example.org/tags/pressure/</link>
+      <pubDate>Tue, 28 Mar 2023 23:00:00 +0700</pubDate>
+      <guid>https://example.org/tags/pressure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>University</title>
+      <link>https://example.org/tags/university/</link>
+      <pubDate>Tue, 28 Mar 2023 23:00:00 +0700</pubDate>
+      <guid>https://example.org/tags/university/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Algorithm</title>
+      <link>https://example.org/tags/algorithm/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Combinatorics</title>
+      <link>https://example.org/tags/combinatorics/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/combinatorics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inclusion-Exclusion</title>
+      <link>https://example.org/tags/inclusion-exclusion/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/inclusion-exclusion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cla</title>
+      <link>https://example.org/tags/cla/</link>
+      <pubDate>Mon, 16 Jan 2023 00:16:17 +0700</pubDate>
+      <guid>https://example.org/tags/cla/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>High-School</title>
+      <link>https://example.org/tags/high-school/</link>
+      <pubDate>Mon, 16 Jan 2023 00:16:17 +0700</pubDate>
+      <guid>https://example.org/tags/high-school/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Offline-Techniques</title>
+      <link>https://example.org/tags/offline-techniques/</link>
+      <pubDate>Thu, 10 Nov 2022 22:30:50 +0700</pubDate>
+      <guid>https://example.org/tags/offline-techniques/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
