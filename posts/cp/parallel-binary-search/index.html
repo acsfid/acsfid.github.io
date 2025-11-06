@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Chặt nhị phân song song :: Nhut Dang</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sử dụng cho các bài toán cần chặt nhị phân nhiều lần" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/posts/cp/parallel-binary-search/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="//localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Chặt nhị phân song song">
+<meta property="og:description" content="Sử dụng cho các bài toán cần chặt nhị phân nhiều lần" />
+<meta property="og:url" content="//localhost:1313/posts/cp/parallel-binary-search/" />
+<meta property="og:site_name" content="Nhut Dang" />
+
+  <meta property="og:image" content="//localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="cp" />
+
+
+  <meta property="article:published_time" content="2022-11-10 22:30:50 &#43;0700 &#43;07" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    acsfid
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/links/">Projects</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+        
+          <li><a href="/projects">Projects</a></li>
+        
+      
+      
+        <hr />
+        
+          <li>
+            <a href="//localhost:1313/">English</a>
+          </li>
+        
+          <li>
+            <a href="//localhost:1313/vi/">Tiếng Việt</a>
+          </li>
+        
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+      <ul class="menu menu--desktop menu--language-selector">
+  <li class="menu__trigger">English&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        <li><a href="//localhost:1313/">English</a></li>
+      
+        <li><a href="//localhost:1313/vi/">Tiếng Việt</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/" >Home</a></li>
+        
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/links/" >Projects</a></li>
+        
+      
+        
+          <li><a href="/posts" >Posts</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Show more&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/projects" >Projects</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/cp/parallel-binary-search/">Chặt nhị phân song song</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2022-11-10&nbsp;[Updated:  2022-11-10]</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="//localhost:1313/tags/cp/">cp</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/algorithm/">algorithm</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/offline-techniques/">offline-techniques</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="nguồn-tham-khảo">Nguồn tham khảo<a href="#nguồn-tham-khảo" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Codeforces - <a href="https://codeforces.com/blog/entry/45578">Parallel Binary Search [tutorial]</a></li>
+<li>Robert1003 - <a href="https://robert1003.github.io/2020/02/05/parallel-binary-search.html#example-problems">A Simple Introduction to Parallel Binary Search</a></li>
+</ul>
+<h2 id="cần-biết-trước">Cần biết trước<a href="#cần-biết-trước" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Tìm kiếm nhị phân (tất nhiên vì bạn cần phải hiểu cách tìm kiếm nhị phân hoạt động).</p>
+<h2 id="mở-đầu">Mở đầu<a href="#mở-đầu" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Trong một số bài toán. Ta cần sử dụng kĩ thuật tìm kiếm nhị phân cho rất nhiều truy vấn. Trong đó có một số thao tác trong lúc chặt nhị phân được lặp lại nhiều lần. Để tối ưu hóa việc này, ta thực hiện chặt nhị phân song song - tức chặt nhị phân cùng một lúc nhiều truy vấn.</p>
+<h2 id="bài-toán">Bài toán<a href="#bài-toán" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Ta xét bài toán sau đây: <a href="https://www.spoj.com/problems/METEORS/">Meteors</a>.</p>
+<h3 id="đề-bài">Đề bài<a href="#đề-bài" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Bài toán có thể được phát biểu đơn giản như sau:</p>
+<p>Cho $N$ người và $M$ cái túi. Túi thứ $i$ được sở hữu bởi người thứ $o_i$, và mỗi người cần ít nhất $g_i$ quả táo trong các túi mà mình sở hữu. Các cái túi được xếp theo thứ tự thành vòng tròn.</p>
+<p>Sau đó, có $K$ sự kiện lần lượt xảy ra, mỗi sự kiện có dạng $l_i, r_i, x_i$: các túi được đánh số từ $l_i$ đến $r_i$ được tăng thêm $x_i$ quả táo ($l_i$ có thể lớn hơn $r_i$ do các túi được xếp thành vòng tròn).</p>
+<p>Với mỗi người, cho biết sau ít nhất bao nhiêu sự kiện thì người đó đạt đủ số lượng quả táo mà mình muốn.</p>
+<h4 id="giới-hạn">Giới hạn<a href="#giới-hạn" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ul>
+<li>$1 \leq N, M, K \leq 3 \cdot 10^5$</li>
+<li>$1 \leq o_i, l_i, r_i \leq N$</li>
+<li>$1 \leq g_i, x_i \leq 10^9$</li>
+</ul>
+<h3 id="phân-tích">Phân tích<a href="#phân-tích" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Cách tiếp cận dễ nhận ra đó là với mỗi người, ta tiến hành tìm kiếm nhị phân số lượng sự kiện, sau đó cập nhật từng sự kiện lên cây phân đoạn hoặc cây Fenwick. Tuy nhiên, tổng độ phức tạp thời gian cho cách này sẽ lên tới $\mathcal{O}(N \cdot \log K \cdot K \cdot \log M)$ và tất nhiên sẽ bị TLE.</p>
+<p>Từ đây ta nhận ra việc tìm kiếm nhị phân lần lượt cho $N$ là không khả thi. Vậy nên ta sẽ tìm cách áp dụng kĩ thuật chặt nhị phân song song.</p>
+<h3 id="lời-giải">Lời giải<a href="#lời-giải" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Từ phân tích trên, ta nhận thấy việc cập nhật các sự kiện từ đầu đến một vị trí nào đó trong các lần chặt nhị phân đã bị lặp lại nhiều lần. Ví dụ như, trong lượt chặt nhị phân đầu tiên của mỗi người, ta đều cần cập nhật lại các sự kiện từ $1$ đến $\frac{K+1}{2}$.</p>
+<p>Từ đây ta sẽ tiếp cận việc tìm kiếm nhị phân theo một hướng khác: thay vì chặt nhị phân $N$ lần cho từng người, thì ta chỉ chặt nhị phân $1$ lần sao cho trong mỗi lượt, ta tiến hành &ldquo;chia nhóm&rdquo; $N$ người theo kết quả.</p>
+<p>Cụ thể, trong lượt đầu tiên, mọi người đều chung một nhóm $[1, K]$. Sang lượt thứ hai, sẽ có một số người nằm ở nhóm $[1, \frac{K}{2}]$ và số còn lại ở nhóm $(\frac{K}{2}, K]$ tùy theo điều kiện thỏa mãn hay không. Đến lượt thứ ba, ta có $4$ nhóm: $[1, \frac{K}{4}]$, $(\frac{K}{4}, \frac{2K}{4}]$, $(\frac{2K}{4}, \frac{3K}{4}]$, và $(\frac{3K}{4}, K]$. Như vậy, sau khoảng $\mathcal{O}(\log K)$ lượt, mọi người đều được chia vào một <strong>điểm</strong>, điểm này sẽ chính là đáp án cho người đó. Đồng thời, ở mỗi lượt, ta chỉ cần thực hiện cập nhật lần lượt $K$ sự kiện là có thể tính được cho $N$ người và chia nhóm cho $N$ người đó.</p>
+<p>Độ phức tạp: Do mỗi thao tác cập nhật $K$ sự kiện mất $\mathcal{O}(\log M)$, nên độ phức tạp của thuật toán này là $\mathcal{O}(\log Q \cdot Q \cdot \log M)$, vừa đủ với giới hạn đề bài.</p>
+<h3 id="cài-đặt">Cài đặt<a href="#cài-đặt" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Ta cần chuẩn bị:</p>
+<ul>
+<li>Một cấu trúc dữ liệu cho phép cập nhật đoạn và truy vấn một phần tử (có thể dùng cây Fenwick hoặc cây phân đoạn)</li>
+<li>Một mảng <code>check_list</code> với <code>check_list[x]</code> lưu danh sách những người đang chặt nhị phân tại vị trí $\text{mid} = x$</li>
+<li>Các mảng $L[i], R[i], \text{best}[i]$ dùng để lưu trạng thái chặt nhị phân của người thứ $i$.</li>
+</ul>
+<p>Mỗi lượt trong $\log K$ lượt chặt nhị phân, ta thực hiện như sau:</p>
+<ul>
+<li>Khởi tạo lại cây Fenwick/phân đoạn.</li>
+<li>Khởi tạo lại mảng <code>check_list</code></li>
+<li>Xác định vị trí chặt nhị phân $\text{mid}[i] = \frac{L[i]+ R[i]}{2}$ cho từng người và thêm vào <code>check_list[mid[i]]</code></li>
+<li>Duyệt lần lượt các sự kiện và cập nhật lên cây Fenwick/phân đoạn. Khi duyệt đến vị trí $x$ thì duyệt từng người trong <code>check_list[x]</code>, tính tổng và cập nhật $L[i], R[i], \text{best}[i]$ cho người đó. Như vậy trong mỗi lượt ta cập nhật cho cây Fenwick đúng $K$ lần, và gọi truy vấn phần tử trên cây cho đúng $M$ cái túi.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Created by BJMinhNhut
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define mp make_pair
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define pb push_back
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define fi first
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define se second
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define FOR(i, a, b) for(int i = (a), _b = (b); i &lt;= _b; ++i) 
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define FORD(i, a, b) for(int i = (a), _b = (b); i &gt;= _b; --i)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define ALL(a) (a).begin(), (a).end()
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define RALL(a) (a).rbegin(), (a).rend()
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define MASK(i) (1ll&lt;&lt;(i))
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define BIT(t, i) (((t)&gt;&gt;(i))&amp;1)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">vll</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="n">pair</span><span class="o">&lt;</span><span class="n">ll</span><span class="p">,</span> <span class="n">ll</span><span class="o">&gt;</span> <span class="n">pll</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">ii</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/***Common Functions***/</span>
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">minimize</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">maximize</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/***End of Template***/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">3e5</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">owner</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>	
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">goal</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Query</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">queries</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">BinarySearch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">best</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">BinarySearch</span><span class="p">(</span><span class="kt">int</span> <span class="n">_l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="n">l</span><span class="p">(</span><span class="n">_l</span><span class="p">),</span> <span class="n">r</span><span class="p">(</span><span class="n">_r</span><span class="p">),</span> <span class="n">best</span><span class="p">(</span><span class="n">_r</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">getMid</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="nf">finished</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">bool</span> <span class="n">go_left</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">go_left</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">best</span> <span class="o">=</span> <span class="n">getMid</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="n">r</span> <span class="o">=</span> <span class="n">getMid</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="n">l</span> <span class="o">=</span> <span class="n">getMid</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">state</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fenwick</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">nodes</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">reset</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">memset</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">nodes</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">k</span> <span class="o">+=</span> <span class="n">k</span><span class="o">&amp;-</span><span class="n">k</span><span class="p">)</span> <span class="n">nodes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">rangeUpdate</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">update</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">update</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="nf">getSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(;</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">-=</span> <span class="n">k</span><span class="o">&amp;-</span><span class="n">k</span><span class="p">)</span> <span class="n">ans</span> <span class="o">+=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">FT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vi</span> <span class="n">check_list</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">vi</span> <span class="n">sectors</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Input</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">FOR</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">owner</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sectors</span><span class="p">[</span><span class="n">owner</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">pb</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">FOR</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">goal</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">FOR</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">queries</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">l</span> <span class="o">&gt;&gt;</span> <span class="n">queries</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span> <span class="o">&gt;&gt;</span> <span class="n">queries</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span> <span class="n">FT</span><span class="p">.</span><span class="n">rangeUpdate</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FT</span><span class="p">.</span><span class="n">rangeUpdate</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FT</span><span class="p">.</span><span class="n">rangeUpdate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Solve</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//init
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">FOR</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">BinarySearch</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span> <span class="c1">// binary search in the range [1, k] 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">changed</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">changed</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">changed</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// check whether any state[i] changed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//init
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">FT</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FOR</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">finished</span><span class="p">())</span> 
+</span></span><span class="line"><span class="cl">			<span class="n">check_list</span><span class="p">[</span><span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getMid</span><span class="p">()].</span><span class="n">pb</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">FOR</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//sweep through k queries
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">update</span><span class="p">(</span><span class="n">queries</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">l</span><span class="p">,</span> <span class="n">queries</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">r</span><span class="p">,</span> <span class="n">queries</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">while</span> <span class="p">(</span><span class="n">check_list</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span> <span class="c1">//check every person who currently has mid = i in binary search
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>				<span class="n">changed</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="kt">int</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">check_list</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">back</span><span class="p">();</span> <span class="n">check_list</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="n">ll</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">sectors</span><span class="p">[</span><span class="n">cur</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="n">sum</span> <span class="o">+=</span> <span class="n">FT</span><span class="p">.</span><span class="n">getSum</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">					<span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&gt;=</span> <span class="n">goal</span><span class="p">[</span><span class="n">cur</span><span class="p">])</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="n">state</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">update</span><span class="p">(</span><span class="n">sum</span> <span class="o">&gt;=</span> <span class="n">goal</span><span class="p">[</span><span class="n">cur</span><span class="p">]);</span> <span class="c1">// go left when meet the goal
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">FOR</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">best</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">best</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span> <span class="c1">//print binary search result
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">else</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;NIE</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">fopen</span><span class="p">(</span><span class="s">&#34;inputf.in&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">freopen</span><span class="p">(</span><span class="s">&#34;inputf.in&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">freopen</span><span class="p">(</span><span class="s">&#34;outputf.in&#34;</span><span class="p">,</span> <span class="s">&#34;w&#34;</span><span class="p">,</span> <span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Input</span><span class="p">(),</span> <span class="n">Solve</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<h2 id="tổng-kết">Tổng kết<a href="#tổng-kết" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<blockquote>
+<p>&ldquo;A cool way to visualize this is to think of a binary search tree. Suppose we are doing standard binary search, and we reject the right interval — this can be thought of as moving left in the tree. Similarly, if we reject the left interval, we are moving right in the tree.</p>
+<p>So what Parallel Binary Search does is move one step down in N binary search trees simultaneously in one &ldquo;sweep&rdquo;, taking $\mathcal{O}(NX)$ time, where X is dependent on the problem and the data structures used in it. Since the height of each tree is $\log N$, the complexity is $\mathcal{O}(NX\log{N})$.&rdquo; — animeshf</p>
+</blockquote>
+<p>Mình xin phép dịch lại như sau: Một cách đơn giản, chặt nhị phân song song tức là ta vẽ ra một <em>cây tìm kiếm nhị phân</em>. Cứ mỗi lượt ta duyệt một tầng, và đẩy các phần tử trong mỗi nút thuộc tầng này sang hai nút trái hoặc phải ở tầng dưới. Việc này được thực hiện chỉ trong $\mathcal{O}(NX)$ với $X$ tùy thuộc vào từng bài toán và cấu trúc dữ liệu mà ta sử dụng. Từ đó dẫn đến tổng độ phức tạp thuật toán là $\mathcal{O}(NX\log{N})$.</p>
+<p>Ngoài ra, cách xử lí truy vấn ở bài toán trên chỉ là một trường hợp cụ thể, trong các trường hợp khác, về tổng quát, ta cần tư duy rằng ở mỗi tầng, ta có danh sách các truy vấn mới được tạo ra từ việc tìm $\text{mid}[i]$ và ta cần đi giải quyết nhanh các truy vấn này.</p>
+<h2 id="một-số-bài-tập-khác">Một số bài tập khác<a href="#một-số-bài-tập-khác" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>ICPC 2022 miền Trung - <a href="https://oj.vnoi.info/problem/icpc22_mt_d">D: Median</a></li>
+<li>Codeforces - <a href="https://codeforces.com/contest/786/problem/C">786C: Till I Collapse</a></li>
+<li>SPOJ - <a href="https://www.spoj.com/problems/METEORS/">Meteors</a></li>
+<li>HackerEarth - <a href="https://www.hackerearth.com/challenges/competitive/may-circuits/algorithm/make-n00b_land-great-again-circuits/">Make n00b_land Great Again!</a></li>
+<li>Topcoder - <a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=14088">SRM 675 Div1 500</a></li>
+</ul>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="//localhost:1313/posts/cp/k-inversion-permutation/" class="button inline prev">
+        &lt; [<span class="button__text">Hoán vị K-nghịch thế</span>]
+      </a>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

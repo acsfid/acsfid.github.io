@@ -1,0 +1,30 @@
+---
+title: Projects
+description: Đây là một số đường dẫn đến những dự án và thông tin khác của mình.
+readingTime: false
+
+links:
+  - title: CLAOJ - Web chấm tự động trường THPT chuyên Long An
+    description: CLAOJ là hệ thống chấm bài trực tuyến dựa trên nền tảng DMOJ và VNOJ, được đưa vào hoạt động từ tháng 6 năm 2021 nhằm tạo môi trường rèn luyện môn Tin học cho học sinh trong và ngoài tỉnh Long An.
+    website: https://claoj.edu.vn
+    image: claoj.svg
+
+  - title: CS161 Project - Minesweeper
+    description: Đây là project của mình cho môn CS161 - APCS của HCMUS. Đây là phiên bản mô phỏng tựa game Minesweeper của Microsoft dùng ngôn ngữ C++ và thư viện graphics.h. Game còn có một số tính năng độc đáo như lưu lại phiên chơi, bảng xếp hạng.
+    website: https://github.com/BJMinhNhut/Minesweeper
+    image: minesweeper.ico
+
+  - title: CS162 Solo Project - Data visualization
+    description: Đây là solo project của mình cho môn CS162 - APCS của HCMUS. Ứng dụng có thể mô phỏng trực quan các câu trúc dữ liệu cơ bản, tuyến tính như mảng tĩnh, mảng động, các danh sách liên kết. Đi kèm với đó là các hiệu ứng sinh động và giao diện bắt mắt. Ứng dụng dùng ngôn ngữ C++ và thư viện SFML.
+    website: https://github.com/BJMinhNhut/data-visualization
+    image: datavisual.png
+
+slug: links
+menu:
+    main: 
+        weight: -50
+        params:
+            icon: link
+
+comments: false
+---

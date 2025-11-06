@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algorithm on Nhut Dang</title><link>/vi/tags/algorithm/</link><description>Recent content in Algorithm on Nhut Dang</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Wed, 18 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/vi/tags/algorithm/index.xml" rel="self" type="application/rss+xml"/><item><title>Hoán vị K-nghịch thế</title><link>/vi/posts/cp/k-inversion-permutation/</link><pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate><guid>/vi/posts/cp/k-inversion-permutation/</guid><description>&lt;h2 id="cần-biết-trước"&gt;Cần biết trước&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Nguyên lí bao hàm loại trừ&lt;/li&gt;
+&lt;li&gt;Bài toán Chia kẹo Euler&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="đề-bài"&gt;Đề bài&lt;/h2&gt;
+&lt;h3 id="tham-khảo"&gt;Tham khảo&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.hackerrank.com/contests/101hack43/challenges/k-inversion-permutations/problem"&gt;HackerRank - K-Inversion Permutations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://codeforces.com/blog/entry/64625"&gt;Codeforces - [Tutorial] Inclusion-Exclusion Principle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="tóm-tắt"&gt;Tóm tắt&lt;/h3&gt;
+&lt;p&gt;Cho hai số nguyên $n, k$. Đếm số lượng hoán vị của dãy ${1, 2, \dots, n}$ có $k$ cặp nghịch thế.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Subtask 1: $1 \leq n \leq 3000, 0 \leq k \leq \min(C^2_n, 3000)$&lt;/li&gt;
+&lt;li&gt;Subtask 2: $1 \leq n \leq 10^5, 0 \leq k \leq \min(C^2_n, 10^5)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="phân-tích"&gt;Phân tích&lt;/h2&gt;
+&lt;h3 id="subtask-1-quy-hoạch-động"&gt;Subtask 1: Quy hoạch động&lt;/h3&gt;
+&lt;p&gt;Độ phức tạp: $\mathcal{O}(nk)$&lt;/p&gt;</description></item><item><title>Chặt nhị phân song song</title><link>/vi/posts/cp/parallel-binary-search/</link><pubDate>Thu, 10 Nov 2022 22:30:50 +0700</pubDate><guid>/vi/posts/cp/parallel-binary-search/</guid><description>&lt;h2 id="nguồn-tham-khảo"&gt;Nguồn tham khảo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Codeforces - &lt;a href="https://codeforces.com/blog/entry/45578"&gt;Parallel Binary Search [tutorial]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Robert1003 - &lt;a href="https://robert1003.github.io/2020/02/05/parallel-binary-search.html#example-problems"&gt;A Simple Introduction to Parallel Binary Search&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cần-biết-trước"&gt;Cần biết trước&lt;/h2&gt;
+&lt;p&gt;Tìm kiếm nhị phân (tất nhiên vì bạn cần phải hiểu cách tìm kiếm nhị phân hoạt động).&lt;/p&gt;
+&lt;h2 id="mở-đầu"&gt;Mở đầu&lt;/h2&gt;
+&lt;p&gt;Trong một số bài toán. Ta cần sử dụng kĩ thuật tìm kiếm nhị phân cho rất nhiều truy vấn. Trong đó có một số thao tác trong lúc chặt nhị phân được lặp lại nhiều lần. Để tối ưu hóa việc này, ta thực hiện chặt nhị phân song song - tức chặt nhị phân cùng một lúc nhiều truy vấn.&lt;/p&gt;</description></item></channel></rss>

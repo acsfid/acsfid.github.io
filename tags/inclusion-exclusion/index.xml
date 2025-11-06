@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inclusion-Exclusion on Terminal</title><link>/tags/inclusion-exclusion/</link><description>Recent content in Inclusion-Exclusion on Terminal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 18 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/inclusion-exclusion/index.xml" rel="self" type="application/rss+xml"/><item><title>Hoán vị K-nghịch thế</title><link>/post/k-inversion-permutation/</link><pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate><guid>/post/k-inversion-permutation/</guid><description>&lt;h2 id="cần-biết-trước"&gt;Cần biết trước&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Nguyên lí bao hàm loại trừ&lt;/li&gt;
-&lt;li&gt;Bài toán Chia kẹo Euler&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="đề-bài"&gt;Đề bài&lt;/h2&gt;
-&lt;h3 id="tham-khảo"&gt;Tham khảo&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.hackerrank.com/contests/101hack43/challenges/k-inversion-permutations/problem"&gt;HackerRank - K-Inversion Permutations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://codeforces.com/blog/entry/64625"&gt;Codeforces - [Tutorial] Inclusion-Exclusion Principle&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="tóm-tắt"&gt;Tóm tắt&lt;/h3&gt;
-&lt;p&gt;Cho hai số nguyên $n, k$. Đếm số lượng hoán vị của dãy ${1, 2, \dots, n}$ có $k$ cặp nghịch thế.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Subtask 1: $1 \leq n \leq 3000, 0 \leq k \leq \min(C^2_n, 3000)$&lt;/li&gt;
-&lt;li&gt;Subtask 2: $1 \leq n \leq 10^5, 0 \leq k \leq \min(C^2_n, 10^5)$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="phân-tích"&gt;Phân tích&lt;/h2&gt;
-&lt;h3 id="subtask-1-quy-hoạch-động"&gt;Subtask 1: Quy hoạch động&lt;/h3&gt;
-&lt;p&gt;Độ phức tạp: $\mathcal{O}(nk)$&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inclusion-Exclusion on Nhut Dang</title>
+    <link>//localhost:1313/tags/inclusion-exclusion/</link>
+    <description>Recent content in Inclusion-Exclusion on Nhut Dang</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/inclusion-exclusion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hoán vị K-nghịch thế</title>
+      <link>//localhost:1313/posts/cp/k-inversion-permutation/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/cp/k-inversion-permutation/</guid>
+      <description>&lt;h2 id=&#34;cần-biết-trước&#34;&gt;Cần biết trước&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Nguyên lí bao hàm loại trừ&lt;/li&gt;&#xA;&lt;li&gt;Bài toán Chia kẹo Euler&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;đề-bài&#34;&gt;Đề bài&lt;/h2&gt;&#xA;&lt;h3 id=&#34;tham-khảo&#34;&gt;Tham khảo&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.hackerrank.com/contests/101hack43/challenges/k-inversion-permutations/problem&#34;&gt;HackerRank - K-Inversion Permutations&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://codeforces.com/blog/entry/64625&#34;&gt;Codeforces - [Tutorial] Inclusion-Exclusion Principle&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;tóm-tắt&#34;&gt;Tóm tắt&lt;/h3&gt;&#xA;&lt;p&gt;Cho hai số nguyên $n, k$. Đếm số lượng hoán vị của dãy ${1, 2, \dots, n}$ có $k$ cặp nghịch thế.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Subtask 1: $1 \leq n \leq 3000, 0 \leq k \leq \min(C^2_n, 3000)$&lt;/li&gt;&#xA;&lt;li&gt;Subtask 2: $1 \leq n \leq 10^5, 0 \leq k \leq \min(C^2_n, 10^5)$&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;phân-tích&#34;&gt;Phân tích&lt;/h2&gt;&#xA;&lt;h3 id=&#34;subtask-1-quy-hoạch-động&#34;&gt;Subtask 1: Quy hoạch động&lt;/h3&gt;&#xA;&lt;p&gt;Độ phức tạp: $\mathcal{O}(nk)$&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
