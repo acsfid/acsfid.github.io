@@ -1,7 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Nhut Dang</title><link>/</link><description>Recent content in Home on Nhut Dang</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 20 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>/about/</link><pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate><guid>/about/</guid><description>&lt;blockquote&gt;
-&lt;p&gt;A comet searching for its destiny&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="who-am-i"&gt;Who am I?&lt;/h2&gt;
-&lt;p&gt;My full name is Dang Minh Nhut (Dang is my last name, and Nhut is my first name). I am from Vietnam. Currently, I am a senior student majoring in Computer Science, currently researching in Natural Language Processing. I have four years of experience in Competitive Programming. Besides that, I’m also interested in photography, music, and manga.&lt;/p&gt;
-&lt;h2 id="contact-information"&gt;Contact information&lt;/h2&gt;
-&lt;p&gt;You can contact me via:&lt;/p&gt;</description></item><item><title>Projects</title><link>/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/links/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Nhut Dang</title><link>/</link><description>Recent content in Home on Nhut Dang</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Projects</title><link>/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/projects/</guid><description/></item><item><title>Publications</title><link>/publications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/publications/</guid><description>&lt;h1 id="2025"&gt;2025&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Parallel Corpus Construction for Chinese and Vietnamese in Historical Texts&lt;/strong&gt;
+&lt;br&gt;
+&lt;strong&gt;&lt;u&gt;Minh-Nhut Dang&lt;/u&gt;&lt;/strong&gt;, Thanh-Hau Cao, Thanh-Duy Lam, Minh-Hoang Le, Duc-Nhuan Le, Si-Dien Dinh
+&lt;br&gt;
+In: &lt;em&gt;International Conference On Computational Intelligence In Engineering Science&lt;/em&gt; (ICCIES), 2025
+&lt;br&gt;
+&lt;a href="https://doi.org/10.1007/978-3-031-98164-7_15"&gt;DOI&lt;/a&gt; &lt;a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-031-98164-7_15?format=bibtex&amp;amp;flavour=citation"&gt;BibTex&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id="2024"&gt;2024&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CESE: A Clip-Based Event Search Engine for AI Challenge HCMC 2024&lt;/strong&gt;
+&lt;br&gt;
+Duc-Nhuan Le, Hoang-Phuc Nguyen, Thanh-Duy Lam, &lt;strong&gt;&lt;u&gt;Minh-Nhut Dang&lt;/u&gt;&lt;/strong&gt;, Minh-Hoang Le
+&lt;br&gt;
+In: &lt;em&gt;International Symposium on Information and Communication Technology&lt;/em&gt; (SoICT), 2024
+&lt;br&gt;
+&lt;small&gt;&lt;em&gt;*Co-first author&lt;/em&gt;&lt;/small&gt;
+&lt;br&gt;
+&lt;a href="https://doi.org/10.1007/978-981-96-4291-5_21"&gt;DOI&lt;/a&gt; &lt;a href="https://citation-needed.springer.com/v2/references/10.1007/978-981-96-4291-5_21?format=bibtex&amp;amp;flavour=citation"&gt;BibTex&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;</description></item></channel></rss>
