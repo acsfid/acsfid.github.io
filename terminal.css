@@ -1,6 +1,15 @@
 /* Fira Code: https://github.com/tonsky/FiraCode */
 @import url('https://cdn.staticdelivr.com/gfonts/css2?family=Fira+Code:wght@300..700&display=swap');
 
+@font-face {
+    font-family: 'Maple Mono';
+    src: url('/fonts/MapleMono-Regular.ttf.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Giúp hiện text bằng font hệ thống trước khi font Maple load xong */
+}
+
 :root {
     --background: #0e1923;
     --foreground: #d6e8ee;
