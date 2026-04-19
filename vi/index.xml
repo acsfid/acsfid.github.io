@@ -27,13 +27,24 @@
 &lt;h2 id="mở-đầu"&gt;Mở đầu&lt;/h2&gt;
 &lt;p&gt;Trong một số bài toán. Ta cần sử dụng kĩ thuật tìm kiếm nhị phân cho rất nhiều truy vấn. Trong đó có một số thao tác trong lúc chặt nhị phân được lặp lại nhiều lần. Để tối ưu hóa việc này, ta thực hiện chặt nhị phân song song - tức chặt nhị phân cùng một lúc nhiều truy vấn.&lt;/p&gt;</description></item><item><title>Dự án</title><link>/vi/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/projects/</guid><description/></item><item><title>Nghiên cứu</title><link>/vi/publications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/publications/</guid><description>&lt;h1 id="2025"&gt;2025&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Parallel Corpus Construction for Chinese and Vietnamese in Historical Texts&lt;/strong&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;U-CESE: Unified Clip-based Event Search Engine for AI Challenge HCMC 2025&lt;/strong&gt;
+&lt;br&gt;
+Duc-Nhuan Le, Hoang-Phuc Nguyen, Thanh-Duy Lam, &lt;strong&gt;&lt;u&gt;Minh-Nhut Dang&lt;/u&gt;&lt;/strong&gt;, Minh-Hoang Le
+&lt;br&gt;
+In: &lt;em&gt;International Symposium on Information and Communication Technology&lt;/em&gt; (SoICT), 2025
+&lt;br&gt;
+In-press&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Parallel Corpus Construction for Chinese and Vietnamese in Historical Texts&lt;/strong&gt;
 &lt;br&gt;
 &lt;strong&gt;&lt;u&gt;Minh-Nhut Dang&lt;/u&gt;&lt;/strong&gt;, Thanh-Hau Cao, Thanh-Duy Lam, Minh-Hoang Le, Duc-Nhuan Le, Si-Dien Dinh
 &lt;br&gt;
 In: &lt;em&gt;International Conference On Computational Intelligence In Engineering Science&lt;/em&gt; (ICCIES), 2025
 &lt;br&gt;
-&lt;a href="https://doi.org/10.1007/978-3-031-98164-7_15"&gt;DOI&lt;/a&gt; &lt;a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-031-98164-7_15?format=bibtex&amp;amp;flavour=citation"&gt;BibTex&lt;/a&gt;&lt;/li&gt;
+&lt;a href="https://doi.org/10.1007/978-3-031-98164-7_15"&gt;DOI&lt;/a&gt; &lt;a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-031-98164-7_15?format=bibtex&amp;amp;flavour=citation"&gt;BibTex&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h1 id="2024"&gt;2024&lt;/h1&gt;
